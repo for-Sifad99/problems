@@ -42,3 +42,18 @@ function isPalindrome(str) {
 };
 
 isPalindrome('madam');// Output: true
+
+
+// Problem 4: Find the Maximum Number
+// Write a function that takes an array of numbers and returns the largest number.
+function findMaximum(numbers) {
+  let max = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+  return max;
+};
+
+findMaximum([5, 1, 9, 3]); // Output: 9
