@@ -97,6 +97,20 @@ function sumOfAllNumbers(numbers) {
   return sum;
 };
 
-console.log(sumOfAllNumbers([1, 2, 3, 4, 5])); // Output: 15
+sumOfAllNumbers([1, 2, 3, 4, 5]); // Output: 15
 
 
+// Problem 7: Find Even Numbers in an Array
+// Write a function that returns all even numbers from a given array.
+function findEvenNumbers(numbers){
+  let evenNumbers = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if(numbers[i] % 2 === 0){
+      evenNumbers.push(numbers[i]);
+    }
+  };
+  return evenNumbers;
+};
+
+findEvenNumbers([1, 2, 3, 4, 5, 6]); // Output: [2, 4, 6]
