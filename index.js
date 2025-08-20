@@ -102,11 +102,11 @@ sumOfAllNumbers([1, 2, 3, 4, 5]); // Output: 15
 
 // Problem 7: Find Even Numbers in an Array
 // Write a function that returns all even numbers from a given array.
-function findEvenNumbers(numbers){
+function findEvenNumbers(numbers) {
   let evenNumbers = [];
 
   for (let i = 0; i < numbers.length; i++) {
-    if(numbers[i] % 2 === 0){
+    if (numbers[i] % 2 === 0) {
       evenNumbers.push(numbers[i]);
     }
   };
@@ -114,3 +114,41 @@ function findEvenNumbers(numbers){
 };
 
 findEvenNumbers([1, 2, 3, 4, 5, 6]); // Output: [2, 4, 6]
+
+
+// Problem 8: Capitalize First Letter of Each Word
+// Write a function that capitalizes the first letter of each word in a string.
+function capitalizeFirstLetter(sentence) {
+  let currentWord = "";
+  let wordsArr = [];  
+  let capitalizedString = ''.trimEnd();
+
+  for (let i = 0; i < sentence.length; i++) {
+    let ch = sentence[i];
+
+    if (ch === " ") {
+      if (currentWord.length > 0) {
+        wordsArr.push(currentWord); 
+        currentWord = "";
+      }
+    } else {
+      currentWord += ch; 
+    }
+  }
+
+  if (currentWord.length > 0) {
+    wordsArr.push(currentWord);
+  }
+
+  for (let i = 0; i < wordsArr.length; i++) {
+      const capLetter = wordsArr[i][0].toUpperCase();
+      const word = capLetter + wordsArr[i].slice(1, wordsArr[i].length) + ' ';
+      capitalizedString += word;
+    };
+  return capitalizedString;
+};
+
+console.log(capitalizeFirstLetter("hello world")); // Output: ["Hello", "World"]
+
+
+
