@@ -57,3 +57,29 @@ function findMaximum(numbers) {
 };
 
 findMaximum([5, 1, 9, 3]); // Output: 9
+
+
+// Problem 5: Remove Duplicates from an Array
+// Write a function that removes all duplicate numbers from an array.
+function removeDuplicates(arr){
+let uniqueArr = [];
+
+for (let i =0; i < arr.length; i++) {
+ const current = arr[i];
+  let isExists = false;
+
+  for(let j = 0; j < uniqueArr.length; j++){
+    if(uniqueArr[j] === current){
+      isExists = true;
+      break;
+    }
+  }
+
+  if(!isExists){
+    uniqueArr.push(current);
+  }
+}
+return uniqueArr;
+};
+
+removeDuplicates([1, 2, 2, 3, 4, 4]); // Output: [1, 2, 3, 4]
