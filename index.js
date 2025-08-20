@@ -162,7 +162,27 @@ function factorial(n) {
   return result;
 }
 
-console.log(factorial(5));  // Output: 120
+factorial(5);  // Output: 120
+
+
+// Problem 10: PingPong Challenge
+// Print numbers 1 to 20 with Ping/Pong rules
+function pingPong() {
+  for (let i = 1; i <= 20; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("PingPong");
+    } else if (i % 3 === 0) {
+      console.log("Ping");
+    } else if (i % 5 === 0) {
+      console.log("Pong");
+    } else {
+      console.log(i);
+    }
+  }
+};
+
+// Run function
+pingPong();
 
 
 
