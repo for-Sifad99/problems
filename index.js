@@ -33,6 +33,7 @@ countValues('Programming');// Output: 3
 // Write a function that checks if a string is a palindrome(reads the same forward and backward).
 function isPalindrome(str) {
   const lowerCaseStr = str.toLowerCase();
+
   for (let i = 0; i < lowerCaseStr.length / 2; i++) {
     if (lowerCaseStr[i] !== lowerCaseStr[lowerCaseStr.length - 1 - i]) {
       return false;
@@ -61,25 +62,41 @@ findMaximum([5, 1, 9, 3]); // Output: 9
 
 // Problem 5: Remove Duplicates from an Array
 // Write a function that removes all duplicate numbers from an array.
-function removeDuplicates(arr){
-let uniqueArr = [];
+function removeDuplicates(arr) {
+  let uniqueArr = [];
 
-for (let i =0; i < arr.length; i++) {
- const current = arr[i];
-  let isExists = false;
+  for (let i = 0; i < arr.length; i++) {
+    const current = arr[i];
+    let isExists = false;
 
-  for(let j = 0; j < uniqueArr.length; j++){
-    if(uniqueArr[j] === current){
-      isExists = true;
-      break;
+    for (let j = 0; j < uniqueArr.length; j++) {
+      if (uniqueArr[j] === current) {
+        isExists = true;
+        break;
+      }
+    }
+
+    if (!isExists) {
+      uniqueArr.push(current);
     }
   }
-
-  if(!isExists){
-    uniqueArr.push(current);
-  }
-}
-return uniqueArr;
+  return uniqueArr;
 };
 
 removeDuplicates([1, 2, 2, 3, 4, 4]); // Output: [1, 2, 3, 4]
+
+
+// Problem 6: Sum of All Numbers in an Array
+// Write a function that returns the sum of all numbers in an array.
+function sumOfAllNumbers(numbers) {
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  };
+  return sum;
+};
+
+console.log(sumOfAllNumbers([1, 2, 3, 4, 5])); // Output: 15
+
+
